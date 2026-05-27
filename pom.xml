@@ -11,6 +11,7 @@
     <groupId>se.iths.fredrik</groupId>
     <artifactId>Mail-Service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>Mail-Service</name>
     <description>Mail-Service</description>
     <url/>
@@ -79,12 +80,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/FredrikAlmen93/Messenger</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
