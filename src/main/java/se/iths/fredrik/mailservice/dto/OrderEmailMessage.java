@@ -5,11 +5,23 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
 public class OrderEmailMessage {
+    private String email;
+    private String message;
 
-    private String customerEmail;
-    private List<OrderItemDto> items;
-    private double totalPrice;
-    private LocalDateTime orderDate;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
