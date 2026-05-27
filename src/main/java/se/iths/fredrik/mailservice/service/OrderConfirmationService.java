@@ -7,31 +7,15 @@ import se.iths.fredrik.mailservice.dto.OrderItemDto;
 import se.iths.fredrik.messenger.service.MailService;
 
 @Service
-@RequiredArgsConstructor
 public class OrderConfirmationService {
 
     private final MailService mailService;
 
-    public void sendOrderConfirmation(OrderEmailMessage order) {
-        StringBuilder body = new StringBuilder();
+    public OrderConfirmationService(MailService mailService) {
+        this.mailService = mailService;
+    }
 
-        body.append("Order Confirmation\n");
-        body.append("Date: ").append(order.getOrderDate()).append("\n");
-
-        for(OrderItemDto item : order.getItems()) {
-            body.append(item.getProductName())
-                    .append(" * ")
-                    .append(item.getQuantity())
-                    .append(" = ")
-                    .append(item.getPrice() * item.getQuantity())
-                    .append("\n");
-        }
-
-        body.append("\nTotal: ").append(order.getTotalPrice());
-
-        mailService.sendMail(
-                order.getCustomerEmail(),
-                "Your order confirmation"
-        );
+    public void sendOrderConfirmation(String to, String message) {
+        mailService.sendMail(to, message);
     }
 }
