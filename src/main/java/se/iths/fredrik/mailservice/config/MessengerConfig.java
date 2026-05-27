@@ -9,7 +9,8 @@ import se.iths.fredrik.messenger.service.MailService;
 public class MessengerConfig {
 
     @Bean
-    public MailService mailService(JavaMailSender mailSender) {
+    public MailService mailService(JavaMailSender mailSender)
+    {
         return new MailService(mailSender);
     }
 }
