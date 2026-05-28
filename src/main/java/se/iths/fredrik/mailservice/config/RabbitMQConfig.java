@@ -11,7 +11,7 @@ import org.springframework.amqp.support.converter.JacksonJsonMessageConverter;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String ORDER_QUEUE = "order-queue";
+    public static final String ORDER_QUEUE = "confirmation-queue";
 
     @Bean
     public Queue orderQueue() {

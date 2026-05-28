@@ -1,14 +1,14 @@
 package se.iths.fredrik.mailservice.consumer;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import se.iths.fredrik.mailservice.config.RabbitMQConfig;
 import se.iths.fredrik.mailservice.dto.OrderEmailMessage;
 import se.iths.fredrik.messenger.service.MailService;
 
-@Service
+@Component
 public class ConfirmationConsumer {
+
     private final MailService mailService;
 
     public ConfirmationConsumer(MailService mailService) {
@@ -21,7 +21,5 @@ public class ConfirmationConsumer {
                 message.getEmail(),
                 message.getMessage()
         );
-
-        System.out.println("Received and sent message");
     }
 }
