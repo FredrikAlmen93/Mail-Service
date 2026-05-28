@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>se.iths.fredrik</groupId>
-            <artifactId>Messenger</artifactId>
+            <artifactId>messenger</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -83,7 +83,7 @@
     <repositories>
         <repository>
             <id>github</id>
-            <url>http://maven.pkg.github.com/FredrikAlmen93/Messenger</url>
+            <url>https://maven.pkg.github.com/FredrikAlmen93/messenger</url>
         </repository>
     </repositories>
 
