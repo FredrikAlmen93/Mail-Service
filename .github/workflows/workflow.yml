@@ -32,6 +32,6 @@ jobs:
         server-id: github
 
     - name: Build Mail-Service
-      run: mvn -B package -f Mail-Service/pom.xml
+      run: mvn -B clean package -DskipTests -f Mail-Service/pom.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
