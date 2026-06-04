@@ -6,9 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,4 +17,9 @@ public class OrderEmailMessage {
 
     @NotBlank(message = "Message cannot be empty")
     private String message;
+
+    public boolean isValid() {
+        return email != null && !email.isBlank() &&
+                message != null && !message.isBlank();
+    }
 }
