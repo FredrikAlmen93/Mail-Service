@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 /**
  * Represents an email message containing order confirmation details.
  *
- * <p>Stores the recipient's email address and the message content.
- * Validation constraints define the expected format and required values
- * for these fields.</p>
+ * <p>Stores the recipient's email address and the message content
+ * used to prepare an order confirmation email.</p>
  */
 @Data
 @NoArgsConstructor
@@ -26,7 +25,9 @@ public class OrderEmailMessage {
     private String message;
 
     /**
-     * Checks wether the email address and message content are present and not blank.
+     * Checks whether the email address and message content are present and not blank.
+     *
+     * <p>This method does not validate the format of the email address.</p>
      *
      * @return {@code true} if both fields contain non-blank values;
      *         {@code false} otherwise
