@@ -3,7 +3,7 @@ package se.iths.fredrik.mailservice.service;
 import org.springframework.stereotype.Service;
 
 /**
- * Service responsible for formatting order confirmation emails.
+ * Formats the content of order confirmation emails.
  *
  * <p>Provides a consistent greeting and closing around the
  * order information included in the email.</p>
