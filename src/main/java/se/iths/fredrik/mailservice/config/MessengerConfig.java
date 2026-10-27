@@ -6,17 +6,16 @@ import org.springframework.mail.javamail.JavaMailSender;
 import se.iths.fredrik.messenger.service.MailService;
 
 /**
- * Configuration class for setting up the MailService bean.
+ * Configures the mail service used by the application.
  *
- * <p>Defines Spring beans required for sending emails through the application's mail infrastructure.</p>
+ * <p>Registers a {@link MailService} bean that uses
+ * Spring's {@link JavaMailSender} to send emails.</p>
  */
 @Configuration
 public class MessengerConfig {
 
     /**
-     * Creates a {link MailService} bean for sending emails.
-     *
-     * <p>Spring injects the configured {@link JavaMailSender} into the service.</p>
+     * Creates a {@link MailService} bean for sending emails.
      *
      * @param mailSender the mail sender bean used for sending emails
      * @return a configured {@link MailService} instance
