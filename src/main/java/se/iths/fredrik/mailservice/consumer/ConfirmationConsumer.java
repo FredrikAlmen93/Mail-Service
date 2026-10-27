@@ -8,7 +8,7 @@ import se.iths.fredrik.mailservice.service.EmailFormattingService;
 import se.iths.fredrik.messenger.service.MailService;
 
 /**
- * Consumer order confirmation messages from RabbitMQ and sends confirmation emails to the specified email addresses.
+ * Consumes order confirmation messages from RabbitMQ.
  *
  * <p>Validates incoming messages, formats the email content and
  * delegates email delivery to {@link MailService}</p>
@@ -20,7 +20,7 @@ public class ConfirmationConsumer {
     private final EmailFormattingService emailFormattingService;
 
     /**
-     * Creates a consumer with the services required to format and send confirmation emails.
+     * Creates a consumer with the services required to process order confirmation emails.
      *
      * @param mailService the service responsible for sending emails
      * @param emailFormattingService the service responsible for formatting email content
@@ -33,8 +33,8 @@ public class ConfirmationConsumer {
     /**
      * Processes incoming order confirmation messages from the RabbitMQ queue.
      *
-     * <p>Invalid or null messages are ignored. Valid messages are formatted and sent as confirmation emails
-     * to recipient specified in the message.</p>
+     * <p>Invalid or null messages are ignored. Valid messages are formatted and
+     * passed to {@link MailService} for email delivery.</p>
      *
      * @param message the order confirmation message received from the RabbitMQ queue
      * @throws RuntimeException if an exception occurs while formatting or sending the confirmation email
