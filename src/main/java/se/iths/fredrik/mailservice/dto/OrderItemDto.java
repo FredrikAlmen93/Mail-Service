@@ -9,6 +9,12 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents an individual item in an order confirmation.
+ *
+ * <p>Contains the product ID, name, quantity and price used
+ * when preparing order confirmation details.</p>
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
